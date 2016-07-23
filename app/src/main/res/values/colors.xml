@@ -1,10 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--<color name="colorPrimary">#ffdd60</color>-->
-    <color name="colorPrimary">#ffe153</color>
-    <color name="colorPrimaryDark">#b49d3a</color>
-    <color name="colorAccent">#F00</color>
+    <color name="colorPrimary">#ffdd60</color>
+    <color name="colorPrimaryDark">#B1994A</color>
+    <color name="colorAccent">#ee6723</color>
+
     <color name="yellow">#fecf33</color>
+    <color name="yellow_active">#ffcc00</color>
+    <color name="yellow_plain">#ffdd60</color>
     <color name="light_orange">#fdbd39</color>
     <color name="peach">#ee6723</color>
+
+    <color name="dark_grey">#222222</color>
+    <color name="light_grey">#FAFAFA</color>
+    <color name="deleteButton">#fd676c</color>
+    <color name="success">#0F0</color>
+    <color name="cancel">#F00</color>
+
+    <color name="colorBackground">#f6f5f3</color>
+    <color name="shadow">#e5e5e5</color>
 </resources>
