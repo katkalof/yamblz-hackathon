@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.android.flexbox.FlexboxLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,14 +35,14 @@ public class CollectWordFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_collect_word, container, false);
         generateWordsForTask();
-        fillTheWord(view);
+        fillTheWord(inflater, container, view);
         ImageView skipNext = (ImageView) view.findViewById(R.id.skip_next);
         skipNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View clieckedView) {
                 if (currStep < collectTaskWordsAmount - 1) {
                     currStep++;
-                    fillTheWord(view);
+                    //fillTheWord(view);
                 }
             }
         });
@@ -47,28 +50,34 @@ public class CollectWordFragment extends Fragment {
         return  view;
     }
 
-    private void fillTheWord(View view) {
+    private void fillTheWord(LayoutInflater inflater, ViewGroup container, View view) {
         TextView wordView = (TextView) view.findViewById(R.id.word);
         String currWord = collectTaskWords.get(currStep);
         wordView.setText(currWord);
 
         String wordTranslated = translateWord(direction, currWord);
 
-        TextView attemptView = (TextView) view.findViewById(R.id.attempt);
-        attemptView.setText(wordTranslated);
-        char[] letters = wordTranslated.toCharArray();
+        FlexboxLayout flexboxLayout = (FlexboxLayout) view.findViewById(R.id.letters_input);
 
-        LinearLayout ll = (LinearLayout) view.findViewById(R.id.mainLayout);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-        params.setMargins(0, 80, 0, 0);
-        for (char letter : letters) {
-            TextView tv = new TextView(getActivity().getApplicationContext());
-            tv.setText(Character.toString(letter));
-            tv.setLayoutParams(params);
-            ll.addView(tv);
+        CardView cardView = (CardView) view.findViewById(R.id.letters_output);
+        String output = "";
+
+        char[] letters = wordTranslated.toCharArray();
+        for (final char letter : letters) {
+            View childLayout = inflater.inflate(R.layout.item_char, flexboxLayout);
+            ((TextView)(childLayout.findViewById(R.id.letter))).setText(Character.toString(letter));
+            childLayout.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //output += letter;
+                }
+            });
         }
 
-
+        /*TextView attemptView = (TextView) view.findViewById(R.id.attempt);
+        attemptView.setText(wordTranslated);
+        char[] letters = wordTranslated.toCharArray();
+        */
     }
 
     private boolean checkTheWord(String attempt, String translation) {
