@@ -8,14 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
 import ru.katkalov.yamblz.hackathon.R;
@@ -29,10 +27,19 @@ public class CollectWordFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_collect_word, container, false);
+        final View view = inflater.inflate(R.layout.fragment_collect_word, container, false);
         generateWordsForTask();
-        fillTheWord(view,0);
-        //translateWord("cat");
+        fillTheWord(view, 0);
+        ImageView skipNext = (ImageView) view.findViewById(R.id.skip_next);
+        skipNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View clieckedView) {
+                if (currStep < collectTaskWordsAmount - 1) {
+                    currStep++;
+                    fillTheWord(view, currStep);
+                }
+            }
+        });
         return view;
     }
 
@@ -42,6 +49,7 @@ public class CollectWordFragment extends Fragment {
         wordView.setText(word);
     }
 
+
     private void generateWordsForTask() {
         List<String> wordsToLearn = MainActivity.wordsToLearn;
         int wordsAmount = wordsToLearn.size();
@@ -49,29 +57,29 @@ public class CollectWordFragment extends Fragment {
             return;
         }
         int i = 0;
-        int k;
+        int random;
         while (i < collectTaskWordsAmount) {
-            k = (int) (Math.random() * wordsAmount);
-            if (!collectTaskWords.contains(wordsToLearn.get(k))) {
-                collectTaskWords.add(wordsToLearn.get(k));
+            random = (int) (Math.random() * wordsAmount);
+            if (!collectTaskWords.contains(wordsToLearn.get(random))) {
+                collectTaskWords.add(wordsToLearn.get(random));
                 i++;
             }
         }
         return;
     }
 
-    private String translateWord(String word) {
+    private String translateWord(String direction, String word) {
         YaTranslator yaTranslator = new YaTranslator();
-        String[] params = {getString(R.string.key_ya_dictionary), "en-ru", word};
+        String[] params = {getString(R.string.key_ya_dictionary), direction, word};
         yaTranslator.execute(params);
 
         String wordTranslated = "";
-        try{
-            Map<String,String> result = yaTranslator.get();
+        try {
+            Map<String, String> result = yaTranslator.get();
             wordTranslated = result.get("translated");
-        } catch(InterruptedException ex){
+        } catch (InterruptedException ex) {
 
-        }catch (ExecutionException ex){
+        } catch (ExecutionException ex) {
 
         }
         Log.e("HACATHON", wordTranslated);
