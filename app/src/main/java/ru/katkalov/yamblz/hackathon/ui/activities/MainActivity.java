@@ -4,9 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import ru.katkalov.yamblz.hackathon.R;
-import ru.katkalov.yamblz.hackathon.ui.fragments.CollectWordFragment;
+import ru.katkalov.yamblz.hackathon.ui.fragments.MainFragment;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,8 +15,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-//                    .replace(R.id.main_frame_layout, new MainFragment())
-                    .replace(R.id.main_frame_layout, new CollectWordFragment())
+                    .replace(R.id.main_frame_layout, new MainFragment())
                     .commit();
         }
     }
