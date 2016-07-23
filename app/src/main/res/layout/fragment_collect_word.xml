@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="hackathon"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="94dp"
+        android:text="hackathon"
+        android:textSize="48sp" />
+
+
+    <LinearLayout
+        android:id="@+id/letters_output"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginTop="72dp"
+        android:background="#fafafa"
+        android:orientation="horizontal"/>
+
+    <com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/letters_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:flexWrap="wrap"/>
+</LinearLayout>
