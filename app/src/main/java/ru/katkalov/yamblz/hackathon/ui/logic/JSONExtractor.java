@@ -6,6 +6,8 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by dsukmanova on 23.07.16.
@@ -14,11 +16,11 @@ import java.io.InputStream;
 public class JSONExtractor {
     InputStream is = null;
 
-    public JSONExtractor (InputStream is){
+    public JSONExtractor(InputStream is) {
         this.is = is;
     }
 
-    public String[] getWordsFromJSon(String language) {
+    public List<String> getWordsFromJSon(String language) {
         JSONObject jsonObject = null;
 
         try {
@@ -29,18 +31,18 @@ public class JSONExtractor {
             jsonObject = new JSONObject(new String(buffer, "UTF-8"));
         } catch (IOException ex) {
             ex.printStackTrace();
-        }catch (JSONException ex){
+        } catch (JSONException ex) {
             ex.printStackTrace();
         }
 
         JSONArray jWords;
-        String[] words = null;
+        List<String> words = null;
         if (jsonObject.has(language)) {
             try {
                 jWords = jsonObject.getJSONArray(language);
-                words = new String[jWords.length()];
+                words = new ArrayList<>(jWords.length());
                 for (int i = 0; i < jWords.length(); i++) {
-                    words[i] = jWords.getString(i);
+                    words.add(i, jWords.getString(i));
                 }
             } catch (JSONException ex) {
                 ex.printStackTrace();
