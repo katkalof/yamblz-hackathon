@@ -5,19 +5,13 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.support.v4.app.FragmentManager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import com.google.android.flexbox.FlexboxLayout;
 
@@ -25,11 +19,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
-import android.support.v4.app.FragmentManager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import ru.katkalov.yamblz.hackathon.R;
 import ru.katkalov.yamblz.hackathon.ui.activities.MainActivity;
@@ -65,10 +54,6 @@ public class CollectWordFragment extends Fragment {
             }
         });
 
-
-        return view;
-        final View view = inflater.inflate(R.layout.fragment_collect_word, container, false);
-
         generateWordsForTask();
         fillTheWord(inflater, container, view);
         ImageView skipNext = (ImageView) view.findViewById(R.id.skip_next);
@@ -81,25 +66,6 @@ public class CollectWordFragment extends Fragment {
                 }
             }
         });
-        ImageView close = (ImageView) view.findViewById(R.id.close);
-        close.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentManager fragmentManager = getFragmentManager();
-                Fragment fragment = fragmentManager.findFragmentByTag("MainFragment");
-                if (fragment == null) {
-                    fragmentManager
-                            .beginTransaction()
-                            .replace(R.id.main_frame_layout, new MainFragment(), "AboutFragment")
-                            .commit();
-                }
-                else {
-                    fragmentManager.beginTransaction().replace(R.id.main_frame_layout, fragment, "AboutFragment").commit();
-                }
-
-            }
-        });
-
         return  view;
     }
 
