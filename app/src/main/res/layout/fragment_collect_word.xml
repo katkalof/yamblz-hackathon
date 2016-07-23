@@ -54,15 +54,6 @@
         android:text="@string/hachathon"
         android:textSize="48sp" />
 
-    <TextView
-        android:id="@+id/attempt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="70dp"
-        android:background="@color/light_grey"
-        android:text="attempt"
-        android:textSize="24sp" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/letters_output"
@@ -82,7 +73,7 @@
         app:flexWrap="wrap"
         app:justifyContent="center">
 
-        <include layout="@layout/item_char" />
+        <!--<include layout="@layout/item_char" />-->
 
     </com.google.android.flexbox.FlexboxLayout>
 </LinearLayout>
