@@ -1,20 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp">
-    </FrameLayout>
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        tools:ignore="ContentDescription,RtlHardcoded">
+
+        <ImageView
+            android:id="@+id/close"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_margin="21dp"
+            android:src="@drawable/ic_close_black_24dp" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+
+        <ImageView
+            android:id="@+id/skip_next"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_margin="21dp"
+            android:src="@drawable/ic_skip_next_black_24dp" />
+
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:text="hackathon"
+        android:text="@string/input_word_translation"
         android:textSize="14sp" />
 
     <TextView
@@ -24,7 +49,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="94dp"
         android:text="hackathon"
-        android:textSize="48sp" />
+        android:textSize="48sp"
+        android:background="@color/light_grey"/>
 
 
     <LinearLayout
@@ -33,12 +59,12 @@
         android:layout_height="56dp"
         android:layout_marginTop="72dp"
         android:background="#fafafa"
-        android:orientation="horizontal"/>
+        android:orientation="horizontal" />
 
     <com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/letters_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:flexWrap="wrap"/>
+        app:flexWrap="wrap" />
 </LinearLayout>
