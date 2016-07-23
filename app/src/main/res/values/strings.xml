@@ -1,6 +1,18 @@
 <resources>
     <string name="app_name">Yamblz Hackathon</string>
     <string name="content">Hello</string>
+    <string name="input_word_translation">ВВЕДИТЕ ПЕРЕВОД СЛОВА</string>
+    <string name="select_mode">Выберите режим обучения</string>
+    <string name="fast_practice">Быстрая тренировка</string>
+    <string name="mode">Режим обучения</string>
     <string name="key_ya_dictionary">dict.1.1.20160722T211606Z.544cc16ee3fe6407.5918ddb2f5b1adf4d1e42df809d0e6eaf3d9706b</string>
     <string name="key_ya_speechkit">30940c12-e625-4637-b9c6-ba44f11d3d97</string>
+    <string name="cards">КАРТОЧКИ</string>
+    <string name="speaking">ПРОГОВАРИВАНИЕ СЛОВ</string>
+    <string name="hearing">СЛОВО НА СЛУХ</string>
+    <string name="pair_find">ПОИСК ПАРЫ</string>
+    <string name="word_comp">СОСТАВЛЕНИЕ СЛОВА</string>
+    <string name="true_false">ВЕРНО - НЕВЕРНО</string>
+    <string name="translation_choice">ВЫБОР ПЕРЕВОДА</string>
+    <string name="image_translation">ПЕРЕВОД ПО КАРТИНКЕ</string>
 </resources>

@@ -2,8 +2,18 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    <dimen name="double_activity_horizontal_margin">32dp</dimen>
 
     <dimen name="fragment_main_horizontal_margin">16dp</dimen>
     <dimen name="fragment_main_vertical_margin">8dp</dimen>
+    <dimen name="fast_practice_button_width">240dp</dimen>
+    <dimen name="fast_practice_button_height">44dp</dimen>
+    <dimen name="toolbar_margin">80dp</dimen>
+    <dimen name="fragment_vertical_margin">8dp</dimen>
+    <dimen name="card_view_height">56dp</dimen>
+    <dimen name="card_view_elevation">2dp</dimen>
+    <dimen name="card_view_margin_bottom">8dp</dimen>
+
 
 </resources>
