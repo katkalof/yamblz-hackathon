@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
+//                    .replace(R.id.main_frame_layout, new MainFragment())
                     .replace(R.id.main_frame_layout, new CollectWordFragment())
                     .commit();
         }
