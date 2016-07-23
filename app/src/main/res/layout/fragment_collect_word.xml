@@ -73,7 +73,7 @@
         app:flexWrap="wrap"
         app:justifyContent="center">
 
-        <include layout="@layout/item_char" />
+        <!--<include layout="@layout/item_char" />-->
 
     </com.google.android.flexbox.FlexboxLayout>
 </LinearLayout>
