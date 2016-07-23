@@ -82,18 +82,37 @@ public class CollectWordFragment extends Fragment {
         String output = "";
 
         char[] letters = wordTranslated.toCharArray();
+        int i = 0;
         for (final char letter : letters) {
             View childLayout = inflater.inflate(R.layout.item_char, flexboxLayout);
-            ((TextView)(childLayout.findViewById(R.id.letter))).setText(Character.toString(letter));
+            childLayout.setTag(i);
+
+//            <TextView
+//            android:id="@+id/letter"
+//            android:layout_width="wrap_content"
+//            android:layout_height="wrap_content"
+//            android:layout_gravity="center"
+//            android:text="A"
+//            android:textSize="24sp" />
+
+//            TextView textView = new TextView(this);
+//            textView.setText(textArray[i]);
+//            linearLayout.addView(textView);
+
+//TODO здесь нужно добавить букву в кардвью и обработать
+
+//            childLayout.addChildrenForAccessibility(new ArrayList<View>().add((textView)));
             childLayout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     //output += letter;
                 }
             });
+            i++;
         }
 
-        /*TextView attemptView = (TextView) view.findViewById(R.id.attempt);
+        /*TextView attemptView = (Tex
+        tView) view.findViewById(R.id.attempt);
         attemptView.setText(wordTranslated);
         char[] letters = wordTranslated.toCharArray();
         */
