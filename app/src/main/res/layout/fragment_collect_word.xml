@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/mainLayout"
     android:orientation="vertical">
 
     <LinearLayout
@@ -48,10 +49,19 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="94dp"
+        android:background="@color/light_grey"
         android:text="hackathon"
-        android:textSize="48sp"
-        android:background="@color/light_grey"/>
+        android:textSize="48sp" />
 
+    <TextView
+        android:id="@+id/attempt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="70dp"
+        android:background="@color/light_grey"
+        android:text="attempt"
+        android:textSize="24sp" />
 
     <LinearLayout
         android:id="@+id/letters_output"
@@ -59,7 +69,8 @@
         android:layout_height="56dp"
         android:layout_marginTop="72dp"
         android:background="#fafafa"
-        android:orientation="horizontal" />
+        android:orientation="horizontal">
+    </LinearLayout>
 
     <com.google.android.flexbox.FlexboxLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
