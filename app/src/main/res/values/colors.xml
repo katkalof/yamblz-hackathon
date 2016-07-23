@@ -18,4 +18,8 @@
 
     <color name="colorBackground">#f6f5f3</color>
     <color name="shadow">#e5e5e5</color>
+
+
+
+    <color name="red_item_menu_expand">#ff5252</color>
 </resources>

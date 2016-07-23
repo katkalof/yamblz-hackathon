@@ -15,4 +15,5 @@
     <string name="true_false">ВЕРНО - НЕВЕРНО</string>
     <string name="translation_choice">ВЫБОР ПЕРЕВОДА</string>
     <string name="image_translation">ПЕРЕВОД ПО КАРТИНКЕ</string>
+    <string name="hachathon">hachathon</string>
 </resources>
