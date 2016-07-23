@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import ru.katkalov.yamblz.hackathon.R;
-import ru.katkalov.yamblz.hackathon.ui.fragments.CollectWordFragment;
+import ru.katkalov.yamblz.hackathon.ui.fragments.MainFragment;
 import ru.katkalov.yamblz.hackathon.ui.logic.JSONExtractor;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,8 +22,7 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             getSupportFragmentManager()
                     .beginTransaction()
-//                    .replace(R.id.main_frame_layout, new MainFragment())
-                    .replace(R.id.main_frame_layout, new CollectWordFragment())
+                    .replace(R.id.main_frame_layout, new MainFragment())
                     .commit();
         }
         try {
